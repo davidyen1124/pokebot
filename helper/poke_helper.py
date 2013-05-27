@@ -45,10 +45,10 @@ class Poke:
                 dtsg_match=re.search('\"fb_dtsg\":\"(\S+)\","ajaxpipe_token"',line)
                 if dtsg_match:
                     dtsg=dtsg_match.group(1)
-            elif 'has poked you' in line:
+            elif 'Pokes</h2>' in line:
                 for poke in line.split('a href'):
                     if 'data-hovercard' in poke:
-                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a> has poked you',poke)
+                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a>.*</div><div',poke)
                         if poke_match:
                             pokeman={'uid':poke_match.group(1),'name':poke_match.group(2)}
                             poke_list.append(pokeman)
