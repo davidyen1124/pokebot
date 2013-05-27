@@ -74,7 +74,3 @@ class FB:
     def poke(self):
         poke=Poke(session=self.session,my_id=self.my_id)
         poke.poke()
-
-    def printAllGroups(self):
-        group=Group(self.session)
-        group.getAllGroups()

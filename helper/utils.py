@@ -1,4 +1,5 @@
 import urllib
+import re
 
 
 def getPhstamp(data,dtsg):
@@ -12,3 +13,12 @@ def getPhstamp(data,dtsg):
 
     phstamp='%s%d' % (phstamp,input_len)
     return phstamp
+
+def getDtsg(head_content):
+    dtsg=''
+
+    dtsg_match=re.search('\"fb_dtsg\":\"(\S+)\",\"ajaxpipe_token\"',head_content)
+    if dtsg_match:
+        dtsg=dtsg_match.group(1)
+    return dtsg
+

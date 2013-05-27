@@ -43,10 +43,8 @@ class Poke:
         for line in content.split('\n'):
 
             # get dtsg parameter
-            if 'head' in line:
-                dtsg_match=re.search('\"fb_dtsg\":\"(\S+)\","ajaxpipe_token"',line)
-                if dtsg_match:
-                    dtsg=dtsg_match.group(1)
+            if 'head' in line and not dtsg:
+               dtsg=utils.getDtsg(line)
 
             # get pokers' uid
             elif 'div class=\"uiHeader uiHeaderWithImage uiHeaderPage\"' in line:
