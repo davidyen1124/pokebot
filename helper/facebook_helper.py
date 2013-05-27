@@ -2,6 +2,7 @@ import requests
 import re
 import configure
 from helper.poke_helper import Poke
+from helper.group_helper import Group
 
 class FB:
     def __init__(self):
@@ -73,3 +74,7 @@ class FB:
     def poke(self):
         poke=Poke(session=self.session,my_id=self.my_id)
         poke.poke()
+
+    def printAllGroups(self):
+        group=Group(self.session)
+        group.getAllGroups()

@@ -41,14 +41,18 @@ class Poke:
         dtsg=''
 
         for line in content.split('\n'):
+
+            # get dtsg parameter
             if 'head' in line:
                 dtsg_match=re.search('\"fb_dtsg\":\"(\S+)\","ajaxpipe_token"',line)
                 if dtsg_match:
                     dtsg=dtsg_match.group(1)
-            elif 'Pokes</h2>' in line:
+
+            # get pokers' uid
+            elif 'div class=\"uiHeader uiHeaderWithImage uiHeaderPage\"' in line:
                 for poke in line.split('a href'):
                     if 'data-hovercard' in poke:
-                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a>.*</div><div',poke)
+                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a>.*</div><div class=\"',poke)
                         if poke_match:
                             pokeman={'uid':poke_match.group(1),'name':poke_match.group(2)}
                             poke_list.append(pokeman)
