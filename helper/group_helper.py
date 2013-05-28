@@ -8,7 +8,7 @@ class Group:
         self.groups=[]
         self.my_id=my_id
     
-    def getAllGroups(self):
+    def printAllGroups(self):
         self.groups=[]
         request=self.session.get('https://www.facebook.com/bookmarks/groups')
         self.groups=self.__checkGroups(request.content)

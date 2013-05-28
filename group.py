@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- encoding: utf-8 -*-
 
 import time
 import sys
@@ -12,10 +13,12 @@ def main():
     fb.login(fb_email=configure.fb_email,fb_pass=configure.fb_password)
 
     group=Group(fb.session,fb.my_id)
-    #group.getAllGroups()
 
-    for i in range(1,5):
-        group.updateStatus(group_id='242006459221814',text=u'Sparks Lab{0}'.format(i))
+    # print all groups with name and id
+    # group.printAllGroups()
+
+    # post something in group
+    group.updateStatus(group_id='165780593537834',text='生日快樂')
 
     sys.exit(0)
 
