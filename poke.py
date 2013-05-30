@@ -7,8 +7,8 @@ from helper.facebook_helper import FB
 
 
 def main():
-    fb=FB()
-    fb.login(fb_email=configure.fb_email,fb_pass=configure.fb_password)
+    fb = FB()
+    fb.login(fb_email=configure.fb_email, fb_pass=configure.fb_password)
     while True:
         try:
             fb.poke()

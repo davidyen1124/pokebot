@@ -50,7 +50,7 @@ class Poke:
             elif 'div class=\"uiHeader uiHeaderWithImage uiHeaderPage\"' in line:
                 for poke in line.split('a href'):
                     if 'data-hovercard' in poke:
-                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a>.*</div><div class=\"',poke)
+                        poke_match=re.search('user.php\?id=(\d+)\">(.*)</a>.*</div><div class=\"fsm fwn fcg\"',poke)
                         if poke_match:
                             pokeman={'uid':poke_match.group(1),'name':poke_match.group(2)}
                             poke_list.append(pokeman)

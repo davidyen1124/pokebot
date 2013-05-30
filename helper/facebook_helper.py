@@ -2,7 +2,6 @@ import requests
 import re
 import configure
 from helper.poke_helper import Poke
-from helper.group_helper import Group
 
 class FB:
     def __init__(self):
