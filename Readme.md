@@ -13,8 +13,6 @@ Requirements
 
 * Python 2.7 - [http://python.org](http://python.org)
 * Requests - [http://docs.python-requests.org/en/latest/index.html](http://docs.python-requests.org/en/latest/index.html()
-* BeautifulSoup - [http://www.crummy.com/software/BeautifulSoup/](http://www.crummy.com/software/BeautifulSoup/)
-* py2exe (If you want to create an executable) - [http://www.py2exe.org/](http://www.py2exe.org/)
 
 Usage
 -----
